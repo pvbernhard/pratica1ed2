@@ -29,7 +29,7 @@ public class Relatorio {
                         if (ordens.length <= 1) {
                             titulos.add("tamanho: " + quantidade + ", tipo: " + tipo);
                         } else {
-                            titulos.add("tamanho: " + quantidade + "ordem: " + ordem + ", tipo: " + tipo);
+                            titulos.add("tamanho: " + quantidade + ", ordem: " + ordem + ", tipo: " + tipo);
                         }
                         arrayDados.add((ArrayList<Dado>) dados.clone());
                     }
