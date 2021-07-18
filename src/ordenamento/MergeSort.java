@@ -20,7 +20,8 @@ public class MergeSort {
         }
     }
 
-    private static <T extends Comparable<T>> void Merge(ArrayList<T> a, ArrayList<T> t, int esqPos, int dirPos, int dirFim) {
+    private static <T extends Comparable<T>> void Merge(ArrayList<T> a, ArrayList<T> t,
+                                                        int esqPos, int dirPos, int dirFim) {
         int esqFim = dirPos - 1;
         int tempPos = esqPos;
         int numElem = dirFim - esqPos + 1;
