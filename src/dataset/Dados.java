@@ -66,6 +66,7 @@ public class Dados {
             if (temp > rightLimit) {
                 temp = (char) (temp % rightLimit + leftLimit);
                 tempString[i] = temp;
+                n = 1;
             } else {
                 tempString[i] = temp;
                 break;
