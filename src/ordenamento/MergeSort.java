@@ -24,7 +24,7 @@ public class MergeSort implements AlgoritmoDeOrdenamento {
         }
     }
 
-    private static <T extends Comparable<T>> void Merge(ArrayList<T> a, ArrayList<T> t,
+    protected static <T extends Comparable<T>> void Merge(ArrayList<T> a, ArrayList<T> t,
                                                         int esqPos, int dirPos, int dirFim) {
         int esqFim = dirPos - 1;
         int tempPos = esqPos;
