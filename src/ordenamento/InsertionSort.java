@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class InsertionSort implements AlgoritmoDeOrdenamento {
 
-    public static <T extends Comparable<T>> void sortSubArray(ArrayList<T> a, int esq, int dir) {
+    public static <T extends Comparable<T>> void sortSubArray(ArrayList<T> a,
+                                                              int esq, int dir) {
         T dado;
         int i, j;
 
