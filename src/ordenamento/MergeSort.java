@@ -2,11 +2,15 @@ package ordenamento;
 
 import java.util.ArrayList;
 
-public class MergeSort {
+public class MergeSort implements AlgoritmoDeOrdenamento {
     public static <T extends Comparable<T>> void sort(ArrayList<T> a) {
         ArrayList<T> temp = new ArrayList<>(a);
 
         MergeMain(a, temp, 0, a.size() - 1);
+    }
+
+    public <T extends Comparable<T>> void sortArray(ArrayList<T> a) {
+        sort(a);
     }
 
     private static <T extends Comparable<T>> void MergeMain(ArrayList<T> a, ArrayList<T> t, int esq, int dir) {
