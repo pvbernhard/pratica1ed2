@@ -27,13 +27,13 @@ public class Dados {
             valor_double += temp_double;
 
             switch (tipo) {
-                case "a" -> adicionarDado(dados, valor_string, valor_double, ordem);
-                case "b" -> adicionarDado(dados, valor_double, valor_string, ordem);
+                case "a" -> adicionarDado(dados, tipo, valor_string, valor_double, ordem);
+                case "b" -> adicionarDado(dados, tipo, valor_double, valor_string, ordem);
                 case "c" -> {
                     for (int j = 0; j < 30; j++) {
                         temp_ints[j] = random.nextInt(1000) + 1;
                     }
-                    adicionarDado(dados, valor_int, temp_ints, ordem);
+                    adicionarDado(dados, tipo, valor_int, temp_ints, ordem);
                 }
                 default -> throw new Exception("gerarDados: tipo não encontrado.");
             }
@@ -75,7 +75,7 @@ public class Dados {
         return String.valueOf(tempString);
     }
 
-    private static void adicionarDado(ArrayList<Dado> dados, Object chave, Object valor, String ordem) {
+    private static void adicionarDado(ArrayList<Dado> dados, String tipo, Object chave, Object valor, String ordem) {
         Random random = new Random();
         if (ordem.equals("aleatorio")) {
             if (random.nextBoolean()) {
@@ -85,9 +85,9 @@ public class Dados {
             }
         }
         if (ordem.equals("decrescente")) {
-            dados.add(0, new Dado(chave, valor));
+            dados.add(0, new Dado(chave, valor, tipo));
         } else {
-            dados.add(new Dado(chave, valor));
+            dados.add(new Dado(chave, valor, tipo));
         }
 
     }
