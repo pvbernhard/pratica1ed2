@@ -5,37 +5,37 @@ import java.util.Random;
 
 public class Dados {
 
-    public static ArrayList<Dado> gerarDados(String tipo, String ordem, int quantidade) throws Exception {
+    public static ArrayList<Dado> gerarDados(String tipo, String ordem, int quantidade) {
         ArrayList<Dado> dados = new ArrayList<>();
 
         Random random = new Random();
 
         int valor_int = 0;
         double valor_double = 0.0;
-        String valor_string = gerarRandomString(10);
+        String valor_string = gerarRandomString(15);
 
         int temp_int;
-        int[] temp_ints = new int[30];
         double temp_double;
+        ArrayList<Integer> temp_ints;
 
         for (int i = 0; i < quantidade; i++) {
             temp_int = random.nextInt(10) + 1;
             temp_double = random.nextDouble() * 10;
+            temp_ints = new ArrayList<>();
 
             valor_string = gerarProximaString(valor_string, temp_int - 1);
             valor_int += temp_int;
             valor_double += temp_double;
 
             switch (tipo) {
-                case "a" -> adicionarDado(dados, tipo, valor_string, valor_double, ordem);
                 case "b" -> adicionarDado(dados, tipo, valor_double, valor_string, ordem);
                 case "c" -> {
                     for (int j = 0; j < 30; j++) {
-                        temp_ints[j] = random.nextInt(1000) + 1;
+                        temp_ints.add(random.nextInt(10) + 1);
                     }
                     adicionarDado(dados, tipo, valor_int, temp_ints, ordem);
                 }
-                default -> throw new Exception("gerarDados: tipo não encontrado.");
+                default -> adicionarDado(dados, tipo, valor_string, valor_double, ordem);
             }
         }
 
@@ -47,8 +47,8 @@ public class Dados {
         int rightLimit = 122; // letter 'z'
         Random random = new Random();
 
-        return random.ints(leftLimit, rightLimit + 1)
-                .limit(tamanho)
+        return "a" + random.ints(leftLimit, rightLimit + 1)
+                .limit(tamanho - 1)
                 .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
                 .toString();
     }

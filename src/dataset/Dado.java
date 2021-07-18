@@ -43,8 +43,8 @@ public class Dado implements Comparable<Dado> {
     @Override
     public String toString() {
         return "{" +
-                "chave=" + chave +
-                ", valor=" + valor +
+                "\"" + chave + "\""+
+                ": " + valor +
                 '}';
     }
 }
