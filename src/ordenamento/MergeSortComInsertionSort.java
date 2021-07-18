@@ -3,7 +3,8 @@ package ordenamento;
 import java.util.ArrayList;
 
 public class MergeSortComInsertionSort extends MergeSort {
-    protected static <T extends Comparable<T>> void MergeMain(ArrayList<T> a, ArrayList<T> t, int esq, int dir) {
+    private static <T extends Comparable<T>> void MergeMain(ArrayList<T> a, ArrayList<T> t,
+                                                            int esq, int dir) {
         int meio;
 
         if (esq < dir) {
@@ -30,5 +31,4 @@ public class MergeSortComInsertionSort extends MergeSort {
             Merge(a, t, esq, meio + 1, dir);
         }
     }
-
 }
