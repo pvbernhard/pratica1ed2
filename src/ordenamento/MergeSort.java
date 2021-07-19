@@ -13,7 +13,8 @@ public class MergeSort implements AlgoritmoDeOrdenamento {
         sort(a);
     }
 
-    private static <T extends Comparable<T>> void MergeMain(ArrayList<T> a, ArrayList<T> t, int esq, int dir) {
+    private static <T extends Comparable<T>> ArrayList<T> MergeMain(ArrayList<T> a, ArrayList<T> t,
+                                                                    int esq, int dir) {
         int meio;
 
         if (esq < dir) {
@@ -22,6 +23,8 @@ public class MergeSort implements AlgoritmoDeOrdenamento {
             MergeMain(a, t, meio + 1, dir);
             Merge(a, t, esq, meio + 1, dir);
         }
+
+        return a;
     }
 
     protected static <T extends Comparable<T>> void Merge(ArrayList<T> a, ArrayList<T> t,
