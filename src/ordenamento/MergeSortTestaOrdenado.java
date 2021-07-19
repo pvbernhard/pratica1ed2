@@ -16,4 +16,11 @@ public class MergeSortTestaOrdenado extends MergeSort {
             }
         }
     }
+
+    @Override
+    public <T extends Comparable<T>> void sortArray(ArrayList<T> a) {
+        ArrayList<T> temp = new ArrayList<>(a);
+
+        MergeMain(a, temp, 0, a.size() - 1);
+    }
 }

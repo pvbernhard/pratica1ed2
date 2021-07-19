@@ -31,4 +31,11 @@ public class MergeSortComInsertionSort extends MergeSort {
             Merge(a, t, esq, meio + 1, dir);
         }
     }
+
+    @Override
+    public <T extends Comparable<T>> void sortArray(ArrayList<T> a) {
+        ArrayList<T> temp = new ArrayList<>(a);
+
+        MergeMain(a, temp, 0, a.size() - 1);
+    }
 }
